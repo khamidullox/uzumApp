@@ -46,18 +46,16 @@ function Login() {
         <h2 className=" font-semibold text-xl">UZUM ADM</h2>
         <Form method="post" className="flex flex-col gap-2 w-72 ">
           <FormInput
-            errorInput={error.newLogin}
+            // errorInput={error.newLogin}
             name="login"
             lebal="Login"
             type="text"
-            // className="max-w-xl"
           />
           <FormInput
-            errorInput={error.password}
+            // errorInput={error.password}
             name="password"
             lebal="Password"
             type="password"
-            // className="max-w-xl"
           />
           <button className="btn btn-primary w-full">Войти</button>
         </Form>

@@ -32,19 +32,18 @@ function ListOtchet() {
       {/* Если база данных доступна */}
       {base && (
         <div className="w-full">
-          {Object.keys(groupedBase)
-          .map((date) => (
+          {Object.keys(groupedBase).map((date) => (
             <div key={date} className="mb-10">
               {/* Заголовок с датой */}
               <h3 className="text-xl font-semibold mb-4">Отчеты за {date}</h3>
 
-              <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-2 text-base ">
+              <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 gap-2 text-base ">
                 {/* Отображение каждого отчета в группе по дате */}
                 {groupedBase[date].map((item) => (
                   <div
                     className={` border p-2 hover:shadow-md rounded-xl font-bold relative px-4 ${
                       user.displayName == item.user
-                        ? "  border-b-indigo-700"
+                        ? "  border-b-indigo-700 bg-indigo-50"
                         : ""
                     }`}
                     key={item.id}
