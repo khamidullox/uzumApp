@@ -32,7 +32,7 @@ function Home() {
   return (
     <Form
       method="post"
-      className="flex items-center justify-center max-w-full ml-24 h-screen flex-col lg:mt-8 md:mt-12 mt-52"
+      className="flex items-center justify-center max-w-full ml-24 h-screen flex-col lg:mt-8 md:mt-12 mt-16"
     >
       <div className="flex items-center justify-between flex-col gap-5 md:flex-row w-full px-5  ">
         <h2 className=" text-3xl font-medium  tracking-widest  ">Очеты:</h2>

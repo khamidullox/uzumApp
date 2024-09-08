@@ -8,16 +8,21 @@ function FormInput({
   errorInput,
   labelDawn,
   value,
+  className,
 }) {
   return (
-    <label className={`form-control w-full max-w-lg `}>
+    <label
+      className={`form-control w-full ${className ? className : "max-w-2xl"}  `}
+    >
       <div className="label">
         <span className="label-text">{lebal}</span>
       </div>
       <input
         type={type}
         placeholder={placeholder}
-        className={`input input-bordered w-full max-w-lg rounded-none ${errorInput}  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none placeholder:text-black  `}
+        className={`input input-bordered w-full ${
+          className ? className : "max-w-xl"
+        } rounded-none ${errorInput}  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none placeholder:text-black  `}
         name={name}
         defaultValue={value}
       />
