@@ -58,9 +58,9 @@ function Registor() {
             errorInput={error.password}
             name="password"
             lebal=" New Password"
-            type="password"
+            type="text"
           />
-          <button className="btn btn-primary w-full">Войти</button>
+          <button className="btn btn-primary w-full">Регистрация</button>
         </Form>
         <Link
           className="link link-success text-xs text-center  w-72 "

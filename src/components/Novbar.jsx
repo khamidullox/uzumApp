@@ -2,6 +2,7 @@ import React from "react";
 import { logOutUser } from "../slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { FaTelegram } from "react-icons/fa";
 function Novbar() {
   let dispatch = useDispatch();
   let { user } = useSelector((state) => state.user);
@@ -16,7 +17,7 @@ function Novbar() {
           <strong className=" text-[rgb(112,0,255)]">UZUM</strong>
           <span className=" font-medium">ADM</span>
         </Link>
-        <div className=" text-[17px] font-mono">
+        <div className=" text-[17px] font-mono pl-2">
           {user.email.slice(-2) == "tu" ? (
             <p>
               ТУ: <span className="">{user.displayName}</span>
@@ -32,23 +33,33 @@ function Novbar() {
         <ul className="flex gap-10 flex-col items-start justify-center">
           <li>
             <Link className="tracking-widest link-hover " to="/">
-              Очеты{" "}
+              Отчеты{" "}
             </Link>
           </li>
           <li>
             <Link className=" tracking-widest link-hover" to="/list">
-              Обший
+              Общие
             </Link>
           </li>
           <li>
             <Link to="/about" className="tracking-widest link-hover">
-              Срез
+              ПВЗ
             </Link>
           </li>
         </ul>
       </div>
       <div className="">
-        <ul className=" flex flex-col  text-base font-mono">
+        <ul className=" flex flex-col items-start gap-5  justify-center  text-base font-mono">
+          <li className="link-hover link-info">
+            <a
+              className="flex items-center justify-center   "
+              href="https://web.telegram.org/k/#@khamidullox"
+            >
+              {" "}
+              <FaTelegram />
+              <span className=""> Telegram</span>
+            </a>
+          </li>
           <li>
             <button
               onClick={() => {

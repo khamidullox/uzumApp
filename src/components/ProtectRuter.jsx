@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 
 function ProtectRuter({ user, children }) {

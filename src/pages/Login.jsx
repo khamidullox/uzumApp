@@ -61,12 +61,12 @@ function Login() {
           />
           <button className="btn btn-primary w-full">Войти</button>
         </Form>
-        <Link
+        {/* <Link
           className="link link-info text-center text-xs w-full"
           to="/registor"
         >
           Registor
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

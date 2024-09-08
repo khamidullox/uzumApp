@@ -33,53 +33,52 @@ function ListOtchet() {
       {base && (
         <div className="w-full">
           {Object.keys(groupedBase)
-            .reverse()
-            .map((date) => (
-              <div key={date} className="mb-10">
-                {/* Заголовок с датой */}
-                <h3 className="text-xl font-semibold mb-4">Отчеты за {date}</h3>
+          .map((date) => (
+            <div key={date} className="mb-10">
+              {/* Заголовок с датой */}
+              <h3 className="text-xl font-semibold mb-4">Отчеты за {date}</h3>
 
-                <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-2 text-base ">
-                  {/* Отображение каждого отчета в группе по дате */}
-                  {groupedBase[date].map((item) => (
-                    <div
-                      className={` border p-2 hover:shadow-md rounded-xl font-bold relative ${
-                        user.displayName == item.user
-                          ? "  border-b-indigo-700"
-                          : ""
-                      }`}
-                      key={item.id}
+              <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-2 text-base ">
+                {/* Отображение каждого отчета в группе по дате */}
+                {groupedBase[date].map((item) => (
+                  <div
+                    className={` border p-2 hover:shadow-md rounded-xl font-bold relative px-4 ${
+                      user.displayName == item.user
+                        ? "  border-b-indigo-700"
+                        : ""
+                    }`}
+                    key={item.id}
+                  >
+                    <h3 className="font-mono pb-2">
+                      ПВЗ: <span className=" font-bold">{item.user}</span>
+                    </h3>
+                    <ul>
+                      <li className="font-mono">
+                        Start: <span className="">{item.start}</span>
+                      </li>
+                      <li className=" font-mono">
+                        Max: <span>{item.max}</span>
+                      </li>
+                      <li className="font-mono">
+                        SIM: <span>{item.sim}</span>
+                      </li>
+                      <li className="font-mono">
+                        Смена: <span>{fromatNumber(item.sum)}</span>
+                      </li>
+                    </ul>
+                    <button
+                      onClick={() => {
+                        deletBase(item, user);
+                      }}
+                      className=" absolute top-2 right-1 p-1 bg-red-400 text-white rounded-xl"
                     >
-                      <h3 className="font-mono pb-2">
-                        ПВЗ: <span className=" font-bold">{item.user}</span>
-                      </h3>
-                      <ul>
-                        <li className="font-mono">
-                          Start: <span className="">{item.start}</span>
-                        </li>
-                        <li className=" font-mono">
-                          Max: <span>{item.max}</span>
-                        </li>
-                        <li className="font-mono">
-                          SIM: <span>{item.sim}</span>
-                        </li>
-                        <li className="font-mono">
-                          Смена: <span>{fromatNumber(item.sum)}</span>
-                        </li>
-                      </ul>
-                      <button
-                        onClick={() => {
-                          deletBase(item, user);
-                        }}
-                        className=" absolute top-2 right-2 p-1 bg-red-400 text-white rounded-xl"
-                      >
-                        <RiDeleteBin5Line />
-                      </button>
-                    </div>
-                  ))}
-                </div>
+                      <RiDeleteBin5Line />
+                    </button>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       )}
 
