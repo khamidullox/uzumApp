@@ -94,7 +94,7 @@ function Home() {
             />
           </div>
         </div>
-        <div className=" w-full mt-5 text-right ">
+        <div className=" w-full mt-5 text-right mb-5 ">
           <button
             onClick={() => {}}
             className="btn btn-info px-10 md:w-52 w-full"
