@@ -37,6 +37,7 @@ let useLogin = () => {
             color: "white",
           },
         });
+        setIsPending(false);
       });
   };
   let registor = async ({ newLogin, password, displayName }) => {
@@ -64,6 +65,7 @@ let useLogin = () => {
           color: "white",
         },
       });
+      setIsPending(false);
     }
   };
 
