@@ -30,8 +30,9 @@ function Login() {
     if (data) {
       if (data.login.trim() !== "" && data.password.trim() !== "") {
         login(data);
+      } else {
+        errorInput(data);
       }
-      errorInput(data);
     }
   }, [data]);
   return (
@@ -46,13 +47,13 @@ function Login() {
         <h2 className=" font-semibold text-xl">UZUM ADM</h2>
         <Form method="post" className="flex flex-col gap-2 w-72 ">
           <FormInput
-            // errorInput={error.newLogin}
+            errorInput={error.newLogin}
             name="login"
             lebal="Login"
             type="text"
           />
           <FormInput
-            // errorInput={error.password}
+            errorInput={error.password}
             name="password"
             lebal="Password"
             type="password"

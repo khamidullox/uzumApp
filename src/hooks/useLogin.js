@@ -7,6 +7,7 @@ import {
 import { auth } from "../firebase/firebaseConfing";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../slices/userSlice";
+import toast from "react-hot-toast";
 
 let useLogin = () => {
   let dispatch = useDispatch();
@@ -23,6 +24,14 @@ let useLogin = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        toast.error(errorMessage, {
+          style: {
+            fontSize: "14px",
+            fontWeight: "bold",
+            background: "#555",
+            color: "white",
+          },
+        });
       });
   };
   let registor = async ({ newLogin, password, displayName }) => {
@@ -41,7 +50,14 @@ let useLogin = () => {
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorMessage);
+      toast.error(errorMessage, {
+        style: {
+          fontSize: "14px",
+          fontWeight: "bold",
+          background: "#555",
+          color: "white",
+        },
+      });
     }
   };
 
