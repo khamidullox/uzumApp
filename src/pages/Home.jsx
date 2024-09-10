@@ -32,7 +32,7 @@ function Home() {
   return (
     <Form
       method="post"
-      className="flex items-center justify-center max-w-full md:ml-24 ml-2 h-screen flex-col lg:mt-0 md:mt-12 mt-16"
+      className="flex items-center justify-center max-w-full md:ml-24 ml-2 h-screen flex-col lg:mt-0 md:mt-12 mt-24"
     >
       <div className="flex items-center justify-between flex-col gap-5 md:flex-row w-full px-5  ">
         <h2 className=" text-3xl font-medium  tracking-widest  ">Отчеты:</h2>
@@ -42,7 +42,7 @@ function Home() {
           </h3>
         </div>
         <input
-          className="bg-gray-50 text-base border-2 bg-none border-indigo-200 tracking-widest rounded-lg focus:ring-blue-500 focus:border-blue-500 block  ps-10 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 text-base border-2 bg-none border-indigo-200  md:tracking-widest  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  ps-10 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
           type="date"
           name="date"
           defaultValue={date}
