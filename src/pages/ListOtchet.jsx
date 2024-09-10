@@ -3,7 +3,7 @@ import useBase from "../hooks/useBase";
 import { fromatNumber } from "../components";
 import { useSelector } from "react-redux";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { formatPlan } from "../app/fromatPlan";
+import { formatDayLimit, formatPlan, formatPlanDay } from "../app/fromatPlan";
 import data from "../app/data";
 
 // Функция для группировки по дате
@@ -41,35 +41,68 @@ function ListOtchet() {
                 {/* Заголовок с датой */}
                 <h3 className="text-xl font-semibold mb-4">Отчеты за {date}</h3>
 
-                <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 gap-2 text-base ">
+                <div className="grid lg:grid-cols-6 md:grid-cols-3 items-start justify-start sm:grid-cols-2 gap-2 text-base ">
                   {/* Отображение каждого отчета в группе по дате */}
                   {groupedBase[date].map((item) => {
                     return (
                       <Fragment key={item.id}>
                         <div
-                          className={` border p-2 hover:shadow-md rounded-xl font-bold relative px-4 ${
+                          className={` border  p-2 hover:shadow-md rounded-xl border-indigo-600 font-bold relative px-2 md:w-40 w-52 ${
                             user.displayName == item.user
-                              ? "  border-b-indigo-700 bg-indigo-50"
+                              ? "  border-b-indigo-700 bg-blue-50"
                               : ""
                           }`}
                         >
                           <h3 className="font-mono pb-2">
                             ПВЗ: <span className=" font-bold">{item.user}</span>
                           </h3>
-                          <ul className=" font-mono">
+                          <ul className=" font-mono flex flex-col">
                             <li className="">
-                              Start: <span className="">{item.start}</span>
+                              <p>
+                                Start: <span className="">{item.start}</span>
+                              </p>
                             </li>
-                            <li className=" ">
-                              Max: <span>{item.max}</span>
+                            <li className=" flex justify-between relative border-b-2 ">
+                              <p>
+                                Max: <span>{item.max}</span>
+                              </p>
+                              <p className=" absolute right-2 bottom-3 rounded-xl border-green-600 border px-0.5 text-green-500 ">
+                                {formatDayLimit(
+                                  item.max,
+                                  item.start,
+                                  formatPlanDay(item).dayLimit
+                                )}
+                                %
+                              </p>
                             </li>
-                            <li className="">
-                              SIM: <span>{item.sim}</span>
+                            <li className=" flex justify-between relative py-0.5 border-b-2 ">
+                              <p>
+                                {" "}
+                                SIM: <span>{item.sim}</span>
+                              </p>
+                              <p className=" absolute right-2 rounded-xl border-green-600 border px-0.5 text-green-500">
+                                {formatDayLimit(
+                                  0,
+                                  item.sim,
+                                  formatPlanDay(item).dayUcell
+                                )}
+                                %
+                              </p>
                             </li>
-                            <li className="">
-                              Смена: <span>{fromatNumber(item.sum)}</span>
+                            <li className="flex justify-between pr-2.5">
+                              <span>Смена:</span>{" "}
+                              <span>{fromatNumber(item.sum)}</span>
                             </li>
-                            <li>{formatPlan(item).uid}</li>
+                            <li className="flex justify-end items-center">
+                              <p className="  rounded-xl border-green-600 border px-0.5 text-right text-green-500 mr-2 mt-1">
+                                {formatDayLimit(
+                                  0,
+                                  item.sum,
+                                  formatPlanDay(item).daySmena
+                                )}
+                                %
+                              </p>
+                            </li>
                           </ul>
                           <button
                             onClick={() => {
@@ -84,10 +117,10 @@ function ListOtchet() {
                     );
                   })}
                 </div>
-                <div className="flex lg:flex-row flex-col gap-2 pt-1 ml-10 mt-2 border rounded-xl justify-center font-medium">
+                <div className="flex lg:flex-row flex-col gap-2 pt-1 border-blue-300  mt-2 border rounded-xl justify-center font-medium">
                   {data.base.map((pvz) => {
                     return (
-                      <div className="flex lg:flex-col justify-center lg:justify-normal items-center border-l pl-1">
+                      <div className="flex lg:flex-col border-blue-300  justify-center lg:justify-normal items-center border-l pl-1">
                         <span> {pvz.uid}</span>
                         <span>
                           {groupedBase[date].map((item) => {

@@ -50,7 +50,7 @@ function Home() {
       </div>
       <div className="mt-8 ">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-5">
-          <div className=" flex-col items-center item-border">
+          <div className=" flex-col items-center item-border border border-emerald-500">
             <h3 className="text-center font-bold text-2xl text-emerald-600">
               Лимит:
             </h3>
@@ -69,7 +69,7 @@ function Home() {
               name="max"
             />
           </div>
-          <div className="flex flex-col items-center item-border">
+          <div className="flex flex-col items-center item-border border border-cyan-500">
             <h3 className="text-center font-bold text-2xl text-cyan-800">
               Смена оплаты:
             </h3>
@@ -81,7 +81,7 @@ function Home() {
               name="sum"
             />
           </div>
-          <div className="flex flex-col items-center item-border">
+          <div className="flex flex-col items-center item-border border border-fuchsia-500">
             <h3 className="text-center font-bold text-2xl text-fuchsia-800">
               Ucell:
             </h3>
@@ -97,7 +97,7 @@ function Home() {
         <div className=" w-full mt-5 text-right mb-5 ">
           <button
             onClick={() => {}}
-            className="btn btn-info px-10 md:w-52 w-full"
+            className="btn btn-info px-10 md:w-52 w-full border-indigo-500 border-2 "
           >
             Отправить
             <BsFillSendArrowUpFill />

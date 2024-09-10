@@ -9,7 +9,7 @@ function NavbarRespons() {
   let dispatch = useDispatch();
 
   return (
-    <div className=" absolute left-2  top-2">
+    <div className="  left-2 fixed top-2">
       {" "}
       <div className="dropdown ">
         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,17 +48,26 @@ function NavbarRespons() {
           <li>
             <ul className="flex gap-2 flex-col p-2 items-start justify-center">
               <li>
-                <Link className="tracking-widest link-hover " to="/">
+                <Link
+                  className="tracking-widest link-hover hover:link-info"
+                  to="/"
+                >
                   Отчеты{" "}
                 </Link>
               </li>
               <li>
-                <Link className=" tracking-widest link-hover" to="/list">
+                <Link
+                  className=" tracking-widest link-hover hover:link-info"
+                  to="/list"
+                >
                   Общие
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="tracking-widest link-hover">
+                <Link
+                  to="/about"
+                  className="tracking-widest link-hover hover:link-info"
+                >
                   ПВЗ
                 </Link>
               </li>

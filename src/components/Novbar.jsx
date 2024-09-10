@@ -11,7 +11,7 @@ function Novbar() {
   return (
     <>
       <NavbarRespons />
-      <div className="navbar bg-base-100 pb-5   shadow-md rounded-lg md:flex hidden  flex-col justify-between fixed h-screen items-start max-w-28 w-full">
+      <div className="navbar bg-base-100 pb-5 border-r-indigo-300 border-r  shadow-md rounded-lg md:flex hidden  flex-col justify-between fixed h-screen items-start max-w-28 w-full">
         <div className="flex flex-col gap-5">
           <Link
             to="/"
@@ -35,17 +35,26 @@ function Novbar() {
         <div className=" text-xl font-medium flex mb-16 ">
           <ul className="flex gap-10 flex-col items-start justify-center">
             <li>
-              <Link className="tracking-widest link-hover " to="/">
+              <Link
+                className="tracking-widest link-hover hover:link-info "
+                to="/"
+              >
                 Отчеты{" "}
               </Link>
             </li>
             <li>
-              <Link className=" tracking-widest link-hover" to="/list">
+              <Link
+                className=" tracking-widest link-hover hover:link-info"
+                to="/list"
+              >
                 Общие
               </Link>
             </li>
             <li>
-              <Link to="/about" className="tracking-widest link-hover">
+              <Link
+                to="/about"
+                className="tracking-widest link-hover hover:link-info"
+              >
                 ПВЗ
               </Link>
             </li>
