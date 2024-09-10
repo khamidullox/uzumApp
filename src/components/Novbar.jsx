@@ -57,6 +57,7 @@ function Novbar() {
               <a
                 className="flex items-center justify-center   "
                 href="https://t.me/khamidullox"
+                target="_blank"
               >
                 {" "}
                 <FaTelegram />

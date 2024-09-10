@@ -68,7 +68,7 @@ function NavbarRespons() {
             <a
               className="flex items-center    "
               href="https://t.me/khamidullox"
-
+              target="_blank"
             >
               {" "}
               <FaTelegram />
