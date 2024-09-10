@@ -56,7 +56,7 @@ function Novbar() {
             <li className="link-hover link-info">
               <a
                 className="flex items-center justify-center   "
-                href="https://web.telegram.org/k/#@khamidullox"
+                href="https://t.me/khamidullox"
               >
                 {" "}
                 <FaTelegram />

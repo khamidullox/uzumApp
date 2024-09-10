@@ -16,7 +16,7 @@ export let action = async ({ request }) => {
 function Login() {
   let [img, setImg] = useState(1);
   let data = useActionData();
-  let { login } = useLogin();
+  let { login, isPending } = useLogin();
   let { errorInput, error } = useError();
   useEffect(() => {
     const interval = setInterval(() => {
@@ -58,8 +58,16 @@ function Login() {
             lebal="Password"
             type="password"
           />
-          <button className="btn btn-primary w-full">Войти</button>
+          {!isPending && (
+            <button className="btn btn-primary w-full">Войти</button>
+          )}
+          {isPending && (
+            <button className="btn btn-disabled w-full">
+              <span className="loading loading-spinner loading-md"></span>
+            </button>
+          )}
         </Form>
+
         {/* <Link
           className="link link-info text-center text-xs w-full"
           to="/registor"

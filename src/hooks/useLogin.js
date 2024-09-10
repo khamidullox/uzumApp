@@ -8,10 +8,13 @@ import { auth } from "../firebase/firebaseConfing";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../slices/userSlice";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 let useLogin = () => {
   let dispatch = useDispatch();
+  let [isPending, setIsPending] = useState(false);
   let login = ({ login, password }) => {
+    setIsPending(true);
     signInWithEmailAndPassword(
       auth,
       login.endsWith(".tu") ? login : `${login}@uzum.adm`,
@@ -19,7 +22,9 @@ let useLogin = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
+        toast.success(`Добро пожаловать в ${user.displayName}`);
         dispatch(loginUser(user));
+        setIsPending(false);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -45,6 +50,7 @@ let useLogin = () => {
         displayName,
       });
       let user = userCredential.user;
+      toast.success(`Добро пожаловать в ${user.displayName}`);
 
       dispatch(loginUser(user));
     } catch (error) {
@@ -61,6 +67,6 @@ let useLogin = () => {
     }
   };
 
-  return { login, registor };
+  return { login, registor, isPending };
 };
 export default useLogin;
