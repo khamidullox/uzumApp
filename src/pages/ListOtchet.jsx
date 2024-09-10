@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import useBase from "../hooks/useBase";
 import { fromatNumber } from "../components";
 import { useSelector } from "react-redux";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { formatPlan } from "../app/fromatPlan";
+import data from "../app/data";
 
 // Функция для группировки по дате
 const groupByDate = (base) => {
@@ -41,42 +43,62 @@ function ListOtchet() {
 
                 <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 gap-2 text-base ">
                   {/* Отображение каждого отчета в группе по дате */}
-                  {groupedBase[date].map((item) => (
-                    <div
-                      className={` border p-2 hover:shadow-md rounded-xl font-bold relative px-4 ${
-                        user.displayName == item.user
-                          ? "  border-b-indigo-700 bg-indigo-50"
-                          : ""
-                      }`}
-                      key={item.id}
-                    >
-                      <h3 className="font-mono pb-2">
-                        ПВЗ: <span className=" font-bold">{item.user}</span>
-                      </h3>
-                      <ul>
-                        <li className="font-mono">
-                          Start: <span className="">{item.start}</span>
-                        </li>
-                        <li className=" font-mono">
-                          Max: <span>{item.max}</span>
-                        </li>
-                        <li className="font-mono">
-                          SIM: <span>{item.sim}</span>
-                        </li>
-                        <li className="font-mono">
-                          Смена: <span>{fromatNumber(item.sum)}</span>
-                        </li>
-                      </ul>
-                      <button
-                        onClick={() => {
-                          deletBase(item, user);
-                        }}
-                        className=" absolute top-2 right-1 p-1 bg-red-400 text-white rounded-xl"
-                      >
-                        <RiDeleteBin5Line />
-                      </button>
-                    </div>
-                  ))}
+                  {groupedBase[date].map((item) => {
+                    return (
+                      <Fragment key={item.id}>
+                        <div
+                          className={` border p-2 hover:shadow-md rounded-xl font-bold relative px-4 ${
+                            user.displayName == item.user
+                              ? "  border-b-indigo-700 bg-indigo-50"
+                              : ""
+                          }`}
+                        >
+                          <h3 className="font-mono pb-2">
+                            ПВЗ: <span className=" font-bold">{item.user}</span>
+                          </h3>
+                          <ul className=" font-mono">
+                            <li className="">
+                              Start: <span className="">{item.start}</span>
+                            </li>
+                            <li className=" ">
+                              Max: <span>{item.max}</span>
+                            </li>
+                            <li className="">
+                              SIM: <span>{item.sim}</span>
+                            </li>
+                            <li className="">
+                              Смена: <span>{fromatNumber(item.sum)}</span>
+                            </li>
+                            <li>{formatPlan(item).uid}</li>
+                          </ul>
+                          <button
+                            onClick={() => {
+                              deletBase(item, user);
+                            }}
+                            className=" absolute top-2 right-1 p-1 bg-red-400 text-white rounded-xl"
+                          >
+                            <RiDeleteBin5Line />
+                          </button>
+                        </div>
+                      </Fragment>
+                    );
+                  })}
+                </div>
+                <div className="flex lg:flex-row flex-col gap-2 pt-1 ml-10 mt-2 border rounded-xl justify-center font-medium">
+                  {data.base.map((pvz) => {
+                    return (
+                      <div className="flex lg:flex-col justify-center lg:justify-normal items-center border-l pl-1">
+                        <span> {pvz.uid}</span>
+                        <span>
+                          {groupedBase[date].map((item) => {
+                            if (item.user == pvz.uid) {
+                              return "✅";
+                            }
+                          })}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
