@@ -8,8 +8,8 @@ import useError from "../hooks/useError";
 export let action = async ({ request }) => {
   let dataFrom = await request.formData();
   let data = {
-    login: dataFrom.get("login"),
-    password: dataFrom.get("password"),
+    login: dataFrom.get("login").trim(),
+    password: dataFrom.get("password").trim(),
   };
   return data;
 };
