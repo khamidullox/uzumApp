@@ -49,7 +49,6 @@ let useBase = (plan) => {
     }
     if (user.displayName == otchet.user) {
       toast.success("Ваш отчет удален ", {
-        position: "bottom-center",
         style: {
           border: "1px solid red ",
         },
