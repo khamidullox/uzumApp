@@ -3,120 +3,120 @@ let data = {
     {
       uid: "КВА-1",
       plan: {
-        limit: 120,
-        smena: 29382279,
+        limit: 180,
+        smena: 25890000,
         ucell: 20,
       },
     },
     {
       uid: "КУВ-1",
       plan: {
-        limit: 140,
-        smena: 29382279,
+        limit: 240,
+        smena: 64650000,
         ucell: 40,
       },
     },
     {
       uid: "МРГ-1",
       plan: {
-        limit: 432,
-        smena: 65685699,
-        ucell: 0,
+        limit: 510,
+        smena: 69390000,
+        ucell: 50,
       },
     },
     {
       uid: "МРГ-2",
       plan: {
-        limit: 420,
-        smena: 38527408,
+        limit: 270,
+        smena: 45600000,
         ucell: 40,
       },
     },
     {
       uid: "ТЛК-1",
       plan: {
-        limit: 120,
-        smena: 14864855,
+        limit: 210,
+        smena: 20040000,
         ucell: 20,
       },
     },
     {
       uid: "ФЕР-10",
       plan: {
-        limit: 113,
-        smena: 25573730,
+        limit: 210,
+        smena: 26520000,
         ucell: 40,
       },
     },
     {
       uid: "ФЕР-13",
       plan: {
-        limit: 110,
-        smena: 18924885,
-        ucell: 20,
+        limit: 180,
+        smena: 20010000,
+        ucell: 29,
       },
     },
     {
       uid: "ФЕР-14",
       plan: {
-        limit: 175,
-        smena: 24924988,
+        limit: 240,
+        smena: 20940000,
         ucell: 20,
       },
     },
     {
       uid: "ФЕР-15",
       plan: {
-        limit: 123,
-        smena: 20984764,
+        limit: 180,
+        smena: 33660000,
         ucell: 40,
       },
     },
     {
       uid: "ФЕР-4",
       plan: {
-        limit: 174,
-        smena: 45503281,
+        limit: 240,
+        smena: 43860000,
         ucell: 40,
       },
     },
     {
       uid: "ФЕР-5",
       plan: {
-        limit: 206,
-        smena: 69057986,
+        limit: 300,
+        smena: 32700000,
         ucell: 50,
       },
     },
     {
       uid: "ФЕР-6",
       plan: {
-        limit: 177,
-        smena: 21722275,
+        limit: 240,
+        smena: 20790000,
         ucell: 50,
       },
     },
     {
       uid: "ФЕР-7",
       plan: {
-        limit: 137,
-        smena: 26503191,
+        limit: 180,
+        smena: 24090000,
         ucell: 40,
       },
     },
     {
       uid: "ФЕР-8",
       plan: {
-        limit: 132,
-        smena: 29137664,
+        limit: 240,
+        smena: 29040000,
         ucell: 50,
       },
     },
     {
       uid: "ЯМГ-1",
       plan: {
-        limit: 140,
-        smena: 15091577,
+        limit: 210,
+        smena: 16170000,
         ucell: 20,
       },
     },
