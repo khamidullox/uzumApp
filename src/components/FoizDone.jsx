@@ -1,5 +1,6 @@
 import React from "react";
 import { foizPlan, getSimTotalForDate, summPlanDay } from "../app/fromatPlan";
+import { fromatNumber } from ".";
 
 function FoizDone({ groupedBase, date }) {
   let limit = foizPlan(
@@ -27,19 +28,20 @@ function FoizDone({ groupedBase, date }) {
     }
   };
 
-  console.log(sim);
   return (
-    <ul className=" flex gap-16 items-center justify-center font-mono text-2xl my-4 ">
+    <ul className=" flex gap-16 items-center sm:flex-row flex-col justify-center font-mono text-2xl my-4 ">
       <li className=" flex flex-col items-center ">
         <span
           className={`font-semibold p-2 rounded-xl  border-2 ${borderColor(
             limit
           )}`}
         >
-          {" "}
           {limit}%
         </span>
         <span className="text-base">Лимит</span>
+        <span className="text-sm">
+          {getSimTotalForDate(groupedBase[date]).limit}/{summPlanDay().limit}
+        </span>
       </li>
       <li className=" flex items-center flex-col">
         <span
@@ -47,10 +49,13 @@ function FoizDone({ groupedBase, date }) {
             smena
           )}`}
         >
-          {" "}
           {smena}%
         </span>
         <span className="text-base">Смена</span>
+        <span className="text-sm">
+          {fromatNumber(getSimTotalForDate(groupedBase[date]).smena)}/
+          {fromatNumber(summPlanDay().smena)}
+        </span>
       </li>
       <li className=" flex items-center flex-col">
         <span
@@ -58,10 +63,13 @@ function FoizDone({ groupedBase, date }) {
             sim
           )}`}
         >
-          {" "}
           {sim}%
         </span>
         <span className="text-base">Ucell</span>
+        <span className="text-sm">
+          {getSimTotalForDate(groupedBase[date]).sim}/
+          {Math.trunc(summPlanDay().ucell)}
+        </span>
       </li>
     </ul>
   );

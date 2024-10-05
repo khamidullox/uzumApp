@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { FormInput } from "../components";
 import { Form, useActionData } from "react-router-dom";
-import { BsFillSendArrowUpFill } from "react-icons/bs";
+import { BsCurrencyDollar, BsFillSendArrowUpFill } from "react-icons/bs";
 import useBase from "../hooks/useBase";
 import { GlobalLoading } from "react-global-loading";
 import useDate from "../hooks/useDate";
 import { useSelector } from "react-redux";
+import { SiRelianceindustrieslimited } from "react-icons/si";
+import { FaSimCard } from "react-icons/fa";
 export let action = async ({ request }) => {
   let formData = await request.formData();
   console.log();
@@ -51,8 +53,9 @@ function Home() {
       <div className="mt-8 ">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-5">
           <div className=" flex-col items-center item-border border border-emerald-500">
-            <h3 className="text-center font-bold text-2xl text-emerald-600">
-              Лимит:
+            <h3 className=" flex items-center justify-center gap-2 font-bold text-2xl text-emerald-600">
+              <SiRelianceindustrieslimited />
+              <span className=""> Лимит:</span>
             </h3>
             <FormInput
               lebal="Start:"
@@ -70,8 +73,9 @@ function Home() {
             />
           </div>
           <div className="flex flex-col items-center item-border border border-cyan-500">
-            <h3 className="text-center font-bold text-2xl text-cyan-800">
-              Смена оплаты:
+            <h3 className=" flex items-center justify-center gap-2 font-bold text-2xl text-cyan-600">
+              <BsCurrencyDollar />
+              <span className=""> Смена оплаты:</span>
             </h3>
             <FormInput
               lebal="Sum:"
@@ -82,8 +86,9 @@ function Home() {
             />
           </div>
           <div className="flex flex-col items-center item-border border border-fuchsia-500">
-            <h3 className="text-center font-bold text-2xl text-fuchsia-800">
-              Ucell:
+            <h3 className=" flex items-center justify-center gap-2 font-bold text-2xl text-fuchsia-600">
+              <FaSimCard />
+              <span className=""> Ucell:</span>
             </h3>
             <FormInput
               lebal="SIM:"

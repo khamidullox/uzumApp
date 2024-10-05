@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 let useBase = (plan) => {
   let [base, setBase] = useState(null);
   let { user } = useSelector((state) => state.user);
+  let { change } = useSelector((state) => state.top);
   let colection = "ilim";
   useEffect(() => {
     const q = query(collection(db, colection), orderBy("createAt"));
@@ -74,6 +75,18 @@ let useBase = (plan) => {
     });
   };
 
-  return { addDocument, base, deletBase };
+  let topChoose = (a, b) => {
+    switch (change) {
+      case "ucell":
+        return b.sim - a.sim;
+      case "limit":
+        let aLimit = a.start + a.max * 2;
+        let blimit = b.start + b.max * 2;
+        return blimit - aLimit;
+      case "smena":
+        return b.sum - a.sum;
+    }
+  };
+  return { addDocument, base, deletBase, topChoose };
 };
 export default useBase;
