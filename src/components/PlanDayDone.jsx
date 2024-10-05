@@ -2,7 +2,7 @@ import data from "../app/data";
 
 function PlanDayDone({ groupedBase, date }) {
   return (
-    <div className="flex lg:flex-row flex-col gap-2 pt-1 border-blue-300  mt-2 border rounded-xl justify-center font-medium">
+    <div className="flex lg:flex-row text-sm flex-col gap-2 pt- border-blue-300   border rounded-xl justify-center font-medium">
       {data.base.map((pvz, i) => {
         return (
           <div

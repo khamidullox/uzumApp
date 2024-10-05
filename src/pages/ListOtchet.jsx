@@ -47,7 +47,7 @@ function ListOtchet() {
                   className="mb-10 border shadow-lg p-5 rounded-xl "
                 >
                   <HeaderDayOtchet date={date} />
-                  <div className="grid lg:grid-cols-6 md:grid-cols-3 items-start justify-start sm:grid-cols-2 gap-2 text-base ">
+                  <div className="grid lg:grid-cols-6 md:grid-cols-3 items-start justify-start sm:grid-cols-2 gap-1.5 text-base ">
                     {/* Отображение каждого отчета в группе по дате */}
                     {groupedBase[date]
                       .sort((a, b) => {
@@ -63,7 +63,7 @@ function ListOtchet() {
                                   : ""
                               }`}
                             >
-                              <h3 className="font-mono pb-2">
+                              <h3 className="font-mono pb-1">
                                 ПВЗ:{" "}
                                 <span className=" font-bold">{item.user}</span>
                               </h3>
@@ -111,7 +111,7 @@ function ListOtchet() {
                                   <span>{fromatNumber(item.sum)}</span>
                                 </li>
                                 <li className="flex justify-end items-center">
-                                  <p className="  rounded-xl border-green-600 border px-0.5 text-right text-green-500 mr-2 mt-1">
+                                  <p className="  rounded-xl border-green-600 border px-0.5 text-right text-green-500 mr-2 mt-">
                                     {formatDayLimit(
                                       0,
                                       item.sum,
