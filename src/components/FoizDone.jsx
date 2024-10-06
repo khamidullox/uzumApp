@@ -29,7 +29,7 @@ function FoizDone({ groupedBase, date }) {
   };
 
   return (
-    <ul className=" flex gap-16 items-center sm:flex-row flex-col justify-center font-mono text-2xl my-4 ">
+    <ul className=" flex md:gap-16 gap-5 items-center sm:flex-row flex-col justify-center font-mono text-2xl my-4 ">
       <li className=" flex flex-col items-center ">
         <span
           className={`font-semibold p-2 rounded-xl  border-2 ${borderColor(
