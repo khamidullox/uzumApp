@@ -32,6 +32,7 @@ function App() {
         {
           path: "/about",
           element: <About />,
+          action: homeAction,
         },
         {
           path: "/list",

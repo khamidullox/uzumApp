@@ -27,6 +27,7 @@ let useBase = (plan) => {
       querySnapshot.forEach((doc) => {
         cities.push({ ...doc.data(), id: doc.id });
       });
+
       setBase(cities);
     });
   }, [plan]);
@@ -37,6 +38,7 @@ let useBase = (plan) => {
       ...plan,
       createAt: serverTimestamp(),
       user: user.displayName,
+      uid: user.uid,
     });
     showLoading(false);
     toast.success("Отчет отправлен ");

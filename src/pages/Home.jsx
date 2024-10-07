@@ -10,7 +10,6 @@ import { SiRelianceindustrieslimited } from "react-icons/si";
 import { FaSimCard } from "react-icons/fa";
 export let action = async ({ request }) => {
   let formData = await request.formData();
-  console.log();
   let plan = {
     start: formData.get("start") !== "" ? Number(formData.get("start")) : 0,
     max: formData.get("max") !== "" ? Number(formData.get("max")) : 0,
