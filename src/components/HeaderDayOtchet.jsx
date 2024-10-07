@@ -6,43 +6,12 @@ import { FaSimCard } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { topChange } from "../slices/topSlice";
 import { SiCodefactor } from "react-icons/si";
+import { ChangeDefault } from "../app/TopIocnChose";
 
 function HeaderDayOtchet({ date }) {
   let { change } = useSelector((state) => state.top);
   let dispatch = useDispatch();
-  let changeDefault = (chag) => {
-    switch (chag) {
-      case "ucell":
-        return {
-          name: "Топ по ucell",
-          iocn: <FaSimCard />,
-          color: "text-fuchsia-500",
-          border: "border-fuchsia-500",
-        };
-      case "limit":
-        return {
-          name: "Топ по лимитам",
-          iocn: <SiRelianceindustrieslimited />,
-          color: "text-cyan-500",
-          border: "border-cyan-500",
-        };
-      case "smena":
-        return {
-          name: "Топ по смене",
-          iocn: <BsCurrencyDollar />,
-          color: "text-emerald-500",
-          border: "border-emerald-200",
-        };
-      case null:
-        return {
-          name: "Топ",
-          iocn: <SiCodefactor />,
-          color: "text-amber-500",
-          border: "border-amber-500",
-        };
-    }
-  };
-  let { name, iocn, color, border } = changeDefault(change);
+  let { name, iocn, color, border } = ChangeDefault(change);
   return (
     <div className="flex md:items-center items-end md:flex-row flex-col justify-between md:px-5">
       <h3 className="text-xl font-semibold mb-4">Отчеты за {date}</h3>

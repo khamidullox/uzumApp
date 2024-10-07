@@ -10,6 +10,7 @@ import {
   fromatNumber,
   HeaderDayOtchet,
 } from "../components";
+import TopIconList from "../components/TopIconList";
 
 // Функция для группировки по дате
 const groupByDate = (base) => {
@@ -53,7 +54,7 @@ function ListOtchet() {
                       .sort((a, b) => {
                         return topChoose(a, b);
                       })
-                      .map((item) => {
+                      .map((item, index) => {
                         return (
                           <Fragment key={item.id}>
                             <div
@@ -129,6 +130,7 @@ function ListOtchet() {
                               >
                                 <RiDeleteBin5Line />
                               </button>
+                              <TopIconList index={index} />
                             </div>
                           </Fragment>
                         );

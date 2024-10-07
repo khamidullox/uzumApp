@@ -7,7 +7,7 @@ import ProtectRuter from "./components/ProtectRuter";
 import MainLayout from "./layout/MainLayout";
 import { useSelector } from "react-redux";
 //pages
-import { Home, About, Login, Registor } from "./pages";
+import { Home, About, Login, Registor, ErrorPage } from "./pages";
 import ListOtchet from "./pages/ListOtchet";
 //action
 import { action as registorAction } from "./pages/Registor";
@@ -23,6 +23,7 @@ function App() {
           <MainLayout />
         </ProtectRuter>
       ),
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -44,11 +45,13 @@ function App() {
       path: "/login",
       element: user ? <Navigate to="/" /> : <Login />,
       action: loginAction,
+      errorElement: <ErrorPage />,
     },
     {
       path: "/registor",
       element: user ? <Navigate to="/" /> : <Registor />,
       action: registorAction,
+      errorElement: <ErrorPage />,
     },
   ]);
   return <RouterProvider router={routers} />;
