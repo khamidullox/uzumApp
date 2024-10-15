@@ -1,10 +1,11 @@
 import React from "react";
 import useUidBase from "../hooks/useUidBase";
-
+import data from "../app/data";
 
 function SingleAboutPlan() {
   let { base } = useUidBase();
-  console.log(base);
+
+  
   return <div></div>;
 }
 

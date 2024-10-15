@@ -3,7 +3,7 @@ import data from "../app/data";
 function PlanDayDone({ groupedBase, date }) {
   return (
     <div className="flex lg:flex-row text-sm flex-col gap-2 pt- border-blue-300   border rounded-xl justify-center font-medium">
-      {data.base.map((pvz, i) => {
+      {data.otabek.map((pvz, i) => {
         return (
           <div
             key={i}

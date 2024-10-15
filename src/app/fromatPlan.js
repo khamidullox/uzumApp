@@ -1,7 +1,7 @@
 import data from "./data";
 
 export let formatPlan = (pvzs) => {
-  let foundPvz = data["base"].find((pvz) => pvz.uid === pvzs.user);
+  let foundPvz = data["otabek"].find((pvz) => pvz.uid === pvzs.user);
   let { plan, uid } = foundPvz;
   let { smena, limit, ucell } = plan;
   return { smena, limit, ucell, uid };
@@ -9,7 +9,7 @@ export let formatPlan = (pvzs) => {
 
 let day = 30;
 export let formatPlanDay = (pvzs) => {
-  let foundPvz = data["base"].find((pvz) => pvz.uid === pvzs.user);
+  let foundPvz = data["otabek"].find((pvz) => pvz.uid === pvzs.user);
   let { plan, uid } = foundPvz;
   let { smena, limit, ucell } = plan;
   let daySmena = Math.round(smena / day);
@@ -30,7 +30,7 @@ export let summPlanDay = () => {
     ucell: 0,
     limit: 0,
   };
-  data.base.map((item) => {
+  data.otabek.map((item) => {
     Math.round((summ.smena += item.plan.smena / day));
     Math.round((summ.limit += item.plan.limit / day));
     summ.ucell += item.plan.ucell / day;

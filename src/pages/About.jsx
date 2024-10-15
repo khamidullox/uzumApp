@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { SingleAboutPlan } from "../components";
+import ChartApex from "../components/ChartApex";
 
 function About() {
   let { user } = useSelector((store) => store.user);
@@ -18,7 +19,7 @@ function About() {
           В доработке...
         </h3>
       </div>
-      <SingleAboutPlan />
+      {/* <ChartApex /> */}
     </>
   );
 }
