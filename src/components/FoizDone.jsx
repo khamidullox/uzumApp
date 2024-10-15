@@ -40,7 +40,8 @@ function FoizDone({ groupedBase, date }) {
         </span>
         <span className="text-base">Лимит</span>
         <span className="text-sm">
-          {getSimTotalForDate(groupedBase[date]).limit}/{summPlanDay().limit}
+          {getSimTotalForDate(groupedBase[date]).limit}/
+          {Math.round(summPlanDay().limit)}
         </span>
       </li>
       <li className=" flex items-center flex-col">
