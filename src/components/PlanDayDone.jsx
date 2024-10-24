@@ -7,7 +7,7 @@ function PlanDayDone({ groupedBase, date }) {
         return (
           <div
             key={i}
-            className="flex lg:flex-col border-blue-300  justify-center lg:justify-normal items-center border-l pl-1"
+            className="flex lg:flex-col md:border-blue-300  justify-center lg:justify-normal items-center border-l pl-1"
           >
             <span> {pvz.uid}</span>
             <span>

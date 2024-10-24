@@ -22,6 +22,7 @@ let useError = () => {
       setError(error);
     }
   };
+
   return { errorInput, error };
 };
 

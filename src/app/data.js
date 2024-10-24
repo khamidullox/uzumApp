@@ -7,7 +7,7 @@ let data = {
         smena: 31919335,
         ucell: 20,
       },
-      user: { adm1: " ADHAMOVA DILNAVOZ AKMALJON QIZI 0", adm2: " s 0" },
+      user: { adm1: " ADHAMOVA DILNAVOZ AKMALJON QIZI 0", adm2: " ANNA 0" },
     },
     {
       uid: "КУВ-1",
@@ -82,7 +82,10 @@ let data = {
         smena: 17489981,
         ucell: 29,
       },
-      user: { adm1: " TOJIDDINOV ABDURASHID DILSHOD O'G'LI 0", adm2: " s 0" },
+      user: {
+        adm1: " TOJIDDINOV ABDURASHID DILSHOD O'G'LI 0",
+        adm2: " NURMUHAMMAD 0",
+      },
     },
     {
       uid: "ФЕР-14",
@@ -184,8 +187,6 @@ let data = {
       },
     },
   ],
-
-  
 };
 
 export default data;

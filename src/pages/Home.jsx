@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { FormInput } from "../components";
 import { Form, useActionData } from "react-router-dom";
 import { BsCurrencyDollar, BsFillSendArrowUpFill } from "react-icons/bs";
@@ -8,6 +8,7 @@ import useDate from "../hooks/useDate";
 import { useSelector } from "react-redux";
 import { SiRelianceindustrieslimited } from "react-icons/si";
 import { FaSimCard } from "react-icons/fa";
+import useClearInput from "../hooks/useClearInput";
 export let action = async ({ request }) => {
   let formData = await request.formData();
   let plan = {
@@ -23,13 +24,22 @@ function Home() {
   let plan = useActionData();
   let { date } = useDate();
   let { user } = useSelector((state) => state.user);
+  let { cleaInput } = useClearInput();
   let { addDocument, base } = useBase(plan);
+
+  let obj = {
+    refStart: useRef(),
+    refMax: useRef(),
+    refSmena: useRef(),
+    refSim: useRef(),
+  };
+  let { refStart, refMax, refSim, refSmena } = obj;
   useEffect(() => {
     if (plan) {
       addDocument(plan);
+      cleaInput(refStart, refMax, refSmena, refSim);
     }
   }, [plan]);
-
   return (
     <Form
       method="post"
@@ -62,6 +72,7 @@ function Home() {
               type="number"
               errorInput="text-xl font-bold font-mono tracking-widest "
               name="start"
+              refInp={refStart}
             />
             <FormInput
               lebal="Max: "
@@ -69,6 +80,7 @@ function Home() {
               type="number"
               errorInput="text-xl font-bold font-mono tracking-widest "
               name="max"
+              refInp={refMax}
             />
           </div>
           <div className="flex flex-col items-center item-border border border-cyan-500">
@@ -82,6 +94,7 @@ function Home() {
               type="number"
               errorInput="text-xl font-bold font-mono tracking-widest "
               name="sum"
+              refInp={refSmena}
             />
           </div>
           <div className="flex flex-col items-center item-border border border-fuchsia-500">
@@ -95,6 +108,7 @@ function Home() {
               type="number"
               errorInput="text-xl font-bold font-mono tracking-widest "
               name="sim"
+              refInp={refSim}
             />
           </div>
         </div>

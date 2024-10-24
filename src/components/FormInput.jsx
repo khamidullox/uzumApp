@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 function FormInput({
   lebal,
@@ -9,6 +9,7 @@ function FormInput({
   labelDawn,
   value,
   className,
+  refInp,
 }) {
   return (
     <label
@@ -25,6 +26,7 @@ function FormInput({
         } rounded-none ${errorInput}  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none placeholder:text-black  `}
         name={name}
         defaultValue={value}
+        ref={refInp}
       />
       <div className="label">
         <span></span>

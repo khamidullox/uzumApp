@@ -6,7 +6,6 @@ import { FaCrown } from "react-icons/fa";
 function TopIconList({ index }) {
   let { change } = useSelector((stat) => stat.top);
   let { color, iocn } = ChangeDefault(change);
-  console.log(change);
   if (index == 0 || index == 1 || index == 2) {
     return (
       change !== null && (
