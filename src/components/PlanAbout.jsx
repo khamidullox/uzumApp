@@ -8,6 +8,7 @@ import { formatPlanDay } from "../app/fromatPlan";
 
 function PlanAbout({ user }) {
   let { filterData } = useDate(user);
+
   let { plan } = filterData[0];
   let { dayLimit, daySmena, dayUcell } = formatPlanDay(null, filterData[0]);
   return (
