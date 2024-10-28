@@ -8,9 +8,12 @@ export let formatPlan = (pvzs) => {
 };
 
 let day = 30;
-export let formatPlanDay = (pvzs) => {
-  let foundPvz = data["otabek"].find((pvz) => pvz.uid === pvzs.user);
-  let { plan, uid } = foundPvz;
+export let formatPlanDay = (pvzs, pl) => {
+  let foundPvz;
+  if (pvzs) {
+    foundPvz = data["otabek"].find((pvz) => pvz.uid === pvzs.user);
+  }
+  let { plan, uid } = foundPvz ? foundPvz : pl;
   let { smena, limit, ucell } = plan;
   let daySmena = Math.round(smena / day);
   let dayLimit = Math.round(limit / day);
@@ -60,4 +63,3 @@ export let foizPlan = (plan, day) => {
   let foiz = Math.floor((day / plan) * 100);
   return foiz;
 };
-
