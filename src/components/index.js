@@ -6,6 +6,10 @@ export { default as Loading } from "./Loading";
 export { default as PlanDayDone } from "./PlanDayDone";
 export { default as HeaderDayOtchet } from "./HeaderDayOtchet";
 export { default as SingleAboutPlan } from "./SingleAboutPlan";
+export { default as PlanAbout } from "./PlanAbout";
+export { default as NameAdm } from "./NameAdm";
+export { default as ChartApex } from "./ChartApex";
+export { default as TopIconList } from "./TopIconList";
 
 export let fromatNumber = (number) => {
   let newNumber = new Intl.NumberFormat("uz-UZ", {

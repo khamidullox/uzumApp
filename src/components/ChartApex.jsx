@@ -1,11 +1,26 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
-function ChartApex() {
+import useUidBase from "../hooks/useUidBase";
+const groupByMonth = (base) => {
+  if (base) {
+    return base.reduce((acc, item) => {
+      const month = item.date.slice(0, 7); // Извлекаем год и месяц (формат "ГГГГ-ММ")
+      if (!acc[month]) {
+        acc[month] = [];
+      }
+      acc[month].push(item);
+      return acc;
+    }, {});
+  }
+};
+const ChartApex = () => {
+  let { base } = useUidBase();
+  console.log(groupByMonth(base));
   const [chart, setChart] = useState({
     series: [
       {
-        name: "Inflation",
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+        name: "Выполнение",
+        data: [80, 50, 5],
       },
     ],
     options: {
@@ -17,14 +32,14 @@ function ChartApex() {
         bar: {
           borderRadius: 10,
           dataLabels: {
-            position: "top", // top, center, bottom
+            position: "top",
           },
         },
       },
       dataLabels: {
         enabled: true,
         formatter: function (val) {
-          return val + "%";
+          return val.toFixed(0) + "%";
         },
         offsetY: -20,
         style: {
@@ -32,22 +47,8 @@ function ChartApex() {
           colors: ["#304758"],
         },
       },
-
       xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ],
+        categories: ["Лимит", "Смена", "Сим карт"],
         position: "top",
         axisBorder: {
           show: false,
@@ -55,40 +56,17 @@ function ChartApex() {
         axisTicks: {
           show: false,
         },
-        crosshairs: {
-          fill: {
-            type: "gradient",
-            gradient: {
-              colorFrom: "#D8E3F0",
-              colorTo: "#BED1E6",
-              stops: [0, 100],
-              opacityFrom: 0.4,
-              opacityTo: 0.5,
-            },
-          },
-        },
-        tooltip: {
-          enabled: true,
-        },
       },
       yaxis: {
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
         labels: {
-          show: false,
           formatter: function (val) {
             return val + "%";
           },
         },
+        max: 100, // Устанавливаем максимум на 100%
       },
       title: {
-        text: "Monthly Inflation in Argentina, 2002",
-        floating: true,
-        offsetY: 330,
+        text: `План выполнения для`,
         align: "center",
         style: {
           color: "#444",
@@ -96,19 +74,18 @@ function ChartApex() {
       },
     },
   });
+
   return (
     <div>
-      <div id="chart">
-        <ReactApexChart
-          options={chart.options}
-          series={chart.series}
-          type="bar"
-          height={350}
-        />
-      </div>
-      <div id="html-dist"></div>
+      <ReactApexChart
+        options={chart.options}
+        series={chart.series}
+        type="bar"
+        height={350}
+        width={900}
+      />
     </div>
   );
-}
+};
 
 export default ChartApex;

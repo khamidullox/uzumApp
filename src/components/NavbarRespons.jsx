@@ -71,6 +71,14 @@ function NavbarRespons() {
                   ПВЗ
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/chartPlan"
+                  className="tracking-widest link-hover hover:link-info"
+                >
+                  Срез
+                </Link>
+              </li>
             </ul>
           </li>
           <li className="link-hover link-info">

@@ -13,6 +13,7 @@ import ListOtchet from "./pages/ListOtchet";
 import { action as registorAction } from "./pages/Registor";
 import { action as loginAction } from "./pages/Login";
 import { action as homeAction } from "./pages/Home";
+import ChartPlan from "./pages/ChartPlan";
 function App() {
   const { user } = useSelector((state) => state.user);
   let routers = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
         {
           path: "/list",
           element: <ListOtchet />,
+        },
+        {
+          path: "/chartPlan",
+          element: <ChartPlan />,
         },
       ],
     },
