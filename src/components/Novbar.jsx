@@ -58,14 +58,14 @@ function Novbar() {
                 ПВЗ
               </Link>
             </li>
-          {/* <li>
+          <li>
             <Link
               to="/chartPlan"
               className="tracking-widest link-hover hover:link-info"
             >
               Срез
             </Link>
-          </li> */}
+          </li>
           </ul>
         </div>
         <div className="">

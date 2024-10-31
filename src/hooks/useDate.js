@@ -24,12 +24,12 @@ let useDate = (user) => {
     filterData.map((pvz) => {
       const { user } = pvz;
       dataTu = {
-        adm1: user.adm1?.slice(0, -1) || null,
-        adm2: user.adm2?.slice(0, -1) || null,
-        adm3: user.adm3?.slice(0, -1) || null,
-        adm4: user.adm4?.slice(0, -1) || null,
-        mfu: user.mfu?.slice(0, -1) || null,
-        mng: user.mng?.slice(0, -1) || null,
+        adm1: user.adm1 || null,
+        adm2: user.adm2 || null,
+        adm3: user.adm3 || null,
+        adm4: user.adm4 || null,
+        mfu: user.mfu || null,
+        mng: user.mng || null,
       };
     });
   }

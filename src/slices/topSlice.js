@@ -1,13 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// let dataFromLoclaStore = () => {
-//   return (
-//     JSON.parse(localStorage.getItem("user")) || {
-//       user: null,
-//       isAuthState: false,
-//     }
-//   );
-// };
 
 let initialState = {
   change: null,
@@ -20,6 +12,7 @@ export const topSlice = createSlice({
     topChange: (state, { payload }) => {
       state.change = payload;
     },
+    planMout: () => {},
   },
 });
 

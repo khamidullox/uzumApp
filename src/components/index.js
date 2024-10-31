@@ -10,6 +10,7 @@ export { default as PlanAbout } from "./PlanAbout";
 export { default as NameAdm } from "./NameAdm";
 export { default as ChartApex } from "./ChartApex";
 export { default as TopIconList } from "./TopIconList";
+export { default as ChartPlanNumber } from "./ChartPlanNumber";
 
 export let fromatNumber = (number) => {
   let newNumber = new Intl.NumberFormat("uz-UZ", {

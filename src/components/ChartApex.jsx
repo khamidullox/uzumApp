@@ -1,26 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import useUidBase from "../hooks/useUidBase";
-const groupByMonth = (base) => {
-  if (base) {
-    return base.reduce((acc, item) => {
-      const month = item.date.slice(0, 7); // Извлекаем год и месяц (формат "ГГГГ-ММ")
-      if (!acc[month]) {
-        acc[month] = [];
-      }
-      acc[month].push(item);
-      return acc;
-    }, {});
-  }
-};
-const ChartApex = () => {
-  let { base } = useUidBase();
-  console.log(groupByMonth(base));
-  const [chart, setChart] = useState({
+import Loading from "./Loading";
+import { useSelector } from "react-redux";
+
+const ChartApex = ({ srez }) => {
+  let { user } = useSelector((state) => state.user);
+
+  let { limit, smena, ucell } = srez;
+  const chart = {
     series: [
       {
         name: "Выполнение",
-        data: [80, 50, 5],
+        data: [limit, smena, ucell],
       },
     ],
     options: {
@@ -48,7 +40,7 @@ const ChartApex = () => {
         },
       },
       xaxis: {
-        categories: ["Лимит", "Смена", "Сим карт"],
+        categories: ["Лимит ", "Смена", "Сим карт"],
         position: "top",
         axisBorder: {
           show: false,
@@ -63,26 +55,27 @@ const ChartApex = () => {
             return val + "%";
           },
         },
-        max: 100, // Устанавливаем максимум на 100%
+        max: 100,
       },
       title: {
-        text: `План выполнения для`,
+        text: `План выполнения для ${user.displayName}`,
         align: "center",
         style: {
-          color: "#444",
+          color: "#00008B",
+          fontSize: "18px",
         },
       },
     },
-  });
+  };
 
   return (
-    <div>
+    <div className="">
       <ReactApexChart
         options={chart.options}
         series={chart.series}
         type="bar"
         height={350}
-        width={900}
+        width={800}
       />
     </div>
   );

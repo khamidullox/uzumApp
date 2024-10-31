@@ -1,4 +1,4 @@
-let data = {
+let dataOld = {
   otabek: [
     {
       uid: "КВА-1",
@@ -7,7 +7,7 @@ let data = {
         smena: 31919335,
         ucell: 20,
       },
-      user: { adm1: " ADHAMOVA DILNAVOZ AKMALJON QIZI 0", adm2: " ANNA 0" },
+      user: { adm1: " ADHAMOVA DILNAVOZ AKMALJON QIZI 0", adm2: " " },
     },
     {
       uid: "КУВ-1",
@@ -184,6 +184,197 @@ let data = {
       user: {
         adm1: " NABIYEV AXADJON ALIDJONOVICH 0",
         adm2: " HALIMJONOV HAMIDULLO XADIYATULLO O'G'LI 0",
+      },
+    },
+  ],
+};
+let data = {
+  otabek: [
+    {
+      uid: "КВА-1",
+      plan: {
+        limit: 119,
+        smena: 31919335,
+        ucell: 20,
+      },
+      user: {
+        adm1: "ADHAMOVA DILNAVOZ AKMALJON QIZI ",
+        adm2: "KARIMOVA ANNA ALEKSANDROVNA",
+      },
+    },
+    {
+      uid: "КУВ-1",
+      plan: {
+        limit: 187,
+        smena: 41562504,
+        ucell: 40,
+      },
+      user: {
+        mng: "RUSTAMOV DOSTONJON RAVSHANJON O`G`LI ",
+        adm1: "XAMIDOVA NIGINABONU SHUHRATJON QIZI ",
+        adm2: "KARIMOVA ANNA ALEKSANDROVNA",
+      },
+    },
+    {
+      uid: "МРГ-1",
+      plan: {
+        limit: 400,
+        smena: 92594016,
+        ucell: 50,
+      },
+      user: {
+        adm1: "SATTOROVA NAZIRA NURMAT QIZI ",
+        adm2: "YUSIBEKOV ELYOR MAVLONBEK O'G'LI ",
+        adm3: "G'IYOSOV DILNURBEK ULUG'BEK O'G'LI ",
+        adm4: "RAXIMDJANOV DMITRIY ALEKSEYEVICH",
+        mfu: "CHORIYEV JALOLIDDIN JAXONGIR O'G'LI ",
+      },
+    },
+    {
+      uid: "МРГ-2",
+      plan: {
+        limit: 229,
+        smena: 53190092,
+        ucell: 40,
+      },
+      user: {
+        adm1: "XALIMJONOV HAYOTTULLO XADIYATULLO O'G'LI ",
+        adm2: "EGAMBERDIYEV ELYORBEK ERKINJON O'G'LI ",
+        adm3: "KAMOLOV ABBOSXON AZIMJON O'G'LI ",
+      },
+    },
+    {
+      uid: "ТЛК-1",
+      plan: {
+        limit: 169,
+        smena: 17489981,
+        ucell: 20,
+      },
+      user: {
+        adm1: "TO'XTANAZAROV MURODIL MAXSUDJON O'G'LI ",
+        adm2: "ARIPOVA SAYYORAXON ABDIKOXOROVNA",
+      },
+    },
+    {
+      uid: "ФЕР-10",
+      plan: {
+        limit: 109,
+        smena: 29895573,
+        ucell: 40,
+      },
+      user: {
+        adm1: "ABDURASULOVA ELINA BAXTIYORJONOVNA",
+        adm2: "SHATS YURIY ALEKSANDROVICH",
+      },
+    },
+    {
+      uid: "ФЕР-13",
+      plan: {
+        limit: 164,
+        smena: 17489981,
+        ucell: 29,
+      },
+      user: {
+        adm1: "TOJIDDINOV ABDURASHID DILSHOD O'G'LI ",
+        adm2: "DAVRONOV NUMUHAMMAD RAMOJON O’G’LI ",
+      },
+    },
+    {
+      uid: "ФЕР-14",
+      plan: {
+        limit: 189,
+        smena: 28443247,
+        ucell: 20,
+      },
+      user: {
+        adm1: "AZIMOV ILHOMJON RAVSHANJON O’GLI ",
+        adm2: "SHOKIRJONOV ISLOMBEK",
+      },
+    },
+    {
+      uid: "ФЕР-15",
+      plan: {
+        limit: 112,
+        smena: 24907147,
+        ucell: 40,
+      },
+      user: {
+        adm1: "TOIROVA ZIYODAXON QAHRAMON QIZI ",
+        adm2: "DAVLETSHIN ALEKSANDR SALAVATOVICH",
+      },
+    },
+    {
+      uid: "ФЕР-4",
+      plan: {
+        limit: 179,
+        smena: 38442982,
+        ucell: 40,
+      },
+      user: {
+        adm1: "SHUKUROVA SUG‘DIYONA SULTONBEK QIZI ",
+        adm2: "PIGASOVA VIKTORIYA OLEGOVNA",
+        adm3: "BELOV DMITRIY YUREVICH",
+      },
+    },
+    {
+      uid: "ФЕР-5",
+      plan: {
+        limit: 252,
+        smena: 32765851,
+        ucell: 50,
+      },
+      user: {
+        adm1: "DJEMILOV SEYRAN ENVEROVICH",
+        adm2: "SODIQOV ABROR BOXODIROVICH",
+      },
+    },
+    {
+      uid: "ФЕР-6",
+      plan: {
+        limit: 121,
+        smena: 17489981,
+        ucell: 50,
+      },
+      user: {
+        adm1: "ISROILOV TOLIBJON RASULJON O'G'LI ",
+        adm2: "ASADBEK", // В оригинальном списке указано только имя
+      },
+    },
+    {
+      uid: "ФЕР-7",
+      plan: {
+        limit: 118,
+        smena: 17489981,
+        ucell: 40,
+      },
+      user: {
+        adm1: "SODIQOV ASHRAF BAXODIROVICH",
+        adm2: "НОВЫЙ СОТРУДНИК", // В оригинальном списке указано так
+      },
+    },
+    {
+      uid: "ФЕР-8",
+      plan: {
+        limit: 161,
+        smena: 17489981,
+        ucell: 50,
+      },
+      user: {
+        adm1: "MAXMUDOV LAZIZ ELYOROVICH",
+        adm2: "AHMADJONOV BAXROMJON BEGMARDON O'G'LI ",
+        adm3: "SALIYEVA SAMIRA ALISHEROVNA",
+      },
+    },
+    {
+      uid: "ЯМГ-1",
+      plan: {
+        limit: 169,
+        smena: 17489981,
+        ucell: 20,
+      },
+      user: {
+        adm1: "NABIYEV AXADJON ALIDJONOVICH",
+        adm2: "HALIMJONOV HAMIDULLO XADIYATULLO O'G'LI ",
       },
     },
   ],
