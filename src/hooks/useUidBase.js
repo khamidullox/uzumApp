@@ -14,6 +14,8 @@ import useDate from "./useDate";
 let useUidBase = (plan) => {
   let [base, setBase] = useState(null);
   let { user } = useSelector((state) => state.user);
+  let { month } = useSelector((state) => state.top);
+
   let { filterData } = useDate(user);
   let { plan: planPercent } = filterData[0];
   let { limit, smena, ucell } = planPercent;
@@ -48,7 +50,7 @@ let useUidBase = (plan) => {
       }, {});
     }
 
-    let newObjKeys = Object.keys(newObj)[0];
+    let newObjKeys = Object.keys(newObj)[month];
     return { newObj, newObjKeys };
   };
 

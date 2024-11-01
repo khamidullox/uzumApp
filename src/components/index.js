@@ -11,6 +11,11 @@ export { default as NameAdm } from "./NameAdm";
 export { default as ChartApex } from "./ChartApex";
 export { default as TopIconList } from "./TopIconList";
 export { default as ChartPlanNumber } from "./ChartPlanNumber";
+export { default as ListPvzTu } from "./ListPvzTu";
+export { default as AllPlanTu } from "./AllPlanTu";
+export { default as ALlAdmNameTu } from "./ALlAdmNameTu";
+export { default as SkletionLoading } from "./SkletionLoading.jsx";
+export { default as SelectChekDate } from "./SelectChekDate.jsx";
 
 export let fromatNumber = (number) => {
   let newNumber = new Intl.NumberFormat("uz-UZ", {

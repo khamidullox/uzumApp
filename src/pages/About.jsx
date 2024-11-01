@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { NameAdm, PlanAbout } from "../components";
+import { ListPvzTu, NameAdm, PlanAbout } from "../components";
 
 function About() {
   let { user } = useSelector((store) => store.user);
@@ -8,9 +8,7 @@ function About() {
     <>
       <div className="    h flex items-center justify-center flex-col gap-3  mt-10 ">
         {user.email.slice(-2) == "tu" ? (
-          <p>
-            ТУ: <span className="">{user.displayName}</span>
-          </p>
+          <ListPvzTu user={user}/>
         ) : (
           <>
             <NameAdm user={user} />

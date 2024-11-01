@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 let initialState = {
   change: null,
+  month: 1,
 };
 
 export const topSlice = createSlice({
@@ -12,11 +12,13 @@ export const topSlice = createSlice({
     topChange: (state, { payload }) => {
       state.change = payload;
     },
-    planMout: () => {},
+    planMonth: (state, { payload }) => {
+      state.month = payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { topChange } = topSlice.actions;
+export const { topChange, planMonth } = topSlice.actions;
 
 export default topSlice.reducer;

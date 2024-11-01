@@ -16,4 +16,13 @@
   .item-border {
     @apply border p-5 rounded-xl  hover:shadow-md;
   }
+  .employee-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .employee-list.active {
+    max-height: 300px; /* Максимальная высота раскрытого блока */
+  }
 }

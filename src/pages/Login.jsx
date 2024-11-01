@@ -41,7 +41,7 @@ function Login() {
         className={` w-[70%] h-screen bg-cover bg-no-repeat lg:block md:black  hidden  transition-shadow transform`}
         style={{ backgroundImage: `url('/login_photo_${img}.jpg')` }}
       >
-        <img className="" src={``} alt="" />
+        <img loading="lazy" className="" src={``} alt="" />
       </figure>
       <div className=" flex items-cent gap-5  justify-center ml-10 flex-col">
         <h2 className=" font-semibold text-xl">UZUM ADM</h2>
