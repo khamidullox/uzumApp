@@ -14,8 +14,8 @@ function ChartPlan() {
   const { summPlanPercent } = user.email.slice(-2) == "tu" ? {} : useUidBase();
 
   return (
-    <>
-      <div className=" w-full items-center flex my-10 justify-between px-16">
+    <div className="my-24 flex flex-col justify-center items-center">
+      <div className=" w-full items-center flex  justify-between px-16">
         <h2 className="text-2xl font-bold tracking-widest">Срез</h2>
         <SelectChekDate />
       </div>
@@ -31,7 +31,7 @@ function ChartPlan() {
       ) : (
         <></>
       )}
-    </>
+    </div>
   );
 }
 

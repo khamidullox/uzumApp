@@ -9,7 +9,7 @@ function NavbarRespons() {
   let dispatch = useDispatch();
 
   return (
-    <div className="  left-2 fixed top-2 ">
+    <div className="  left-2 fixed top-2  z-10">
       {" "}
       <div className="dropdown  ">
         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,7 +30,7 @@ function NavbarRespons() {
         </div>
         <ul
           tabIndex={0}
-          className="menu menu-sm bg-base-100 dropdown-content  gap-1 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+          className="menu menu-sm bg-base-100 dropdown-content  gap-1 rounded-box z-10  mt-3 w-52 p-2 shadow"
         >
           <li>
             <div className=" text-[17px] font-mono pl-2">
