@@ -10,16 +10,17 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { db } from "../firebase/firebaseConfing";
 import useDate from "./useDate";
+import useBase from "./useBase";
 
 let useUidBase = (plan) => {
   let [base, setBase] = useState(null);
+  let { base: baseAll } = useBase();
   let { user } = useSelector((state) => state.user);
   let { month } = useSelector((state) => state.top);
-
   let { filterData } = useDate(user);
-  let { plan: planPercent } = filterData[0];
-  let { limit, smena, ucell } = planPercent;
-
+  let { plan: planPercent } = filterData[0] || {};
+  let { limit, smena, ucell } = planPercent || {};
+  let baseVer = user.email.slice(-2) == "tu" ? baseAll : base;
   let colection = "ilim";
   useEffect(() => {
     const q = query(
@@ -39,8 +40,8 @@ let useUidBase = (plan) => {
 
   const groupByMonth = () => {
     let newObj = {};
-    if (base) {
-      newObj = base.reduce((acc, item) => {
+    if (baseVer) {
+      newObj = baseVer.reduce((acc, item) => {
         const month = item.date.slice(0, 7); // Извлекаем год и месяц (формат "ГГГГ-ММ")
         if (!acc[month]) {
           acc[month] = [];
@@ -48,14 +49,25 @@ let useUidBase = (plan) => {
         acc[month].push(item);
         return acc;
       }, {});
+      let newObjKeys = Object.keys(newObj)[month];
+      return { newObj, newObjKeys };
     }
-
-    let newObjKeys = Object.keys(newObj)[month];
-    return { newObj, newObjKeys };
   };
-
-  let { newObjKeys, newObj } = groupByMonth();
-
+  let { newObjKeys, newObj } = groupByMonth() ? groupByMonth() : {};
+  const grorpByPvz = () => {
+    if (groupByMonth()) {
+      let objMonth = newObj[newObjKeys];
+      let objUser = objMonth.reduce((acc, item) => {
+        const user = item.user;
+        if (!acc[user]) {
+          acc[user] = [];
+        }
+        acc[user].push(item);
+        return acc;
+      }, {});
+      return objUser;
+    }
+  };
   let summPlanPercent = () => {
     if (base) {
       let counterA = 0;
@@ -104,7 +116,17 @@ let useUidBase = (plan) => {
       return { summPercent, counterAll };
     }
   };
-
-  return { base, groupByMonth, newObjKeys, newObj, summPlanPercent };
+  const calculateTotal = (arr, field) => {
+    return arr.reduce((acc, obj) => acc + (obj[field] || 0), 0);
+  };
+  return {
+    base,
+    groupByMonth,
+    newObjKeys,
+    newObj,
+    summPlanPercent,
+    grorpByPvz,
+    calculateTotal,
+  };
 };
 export default useUidBase;

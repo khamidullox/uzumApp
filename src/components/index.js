@@ -16,6 +16,8 @@ export { default as AllPlanTu } from "./AllPlanTu";
 export { default as ALlAdmNameTu } from "./ALlAdmNameTu";
 export { default as SkletionLoading } from "./SkletionLoading.jsx";
 export { default as SelectChekDate } from "./SelectChekDate.jsx";
+export { default as ListPlanSrez } from "./ListPlanSrez.jsx";
+export { default as ChartApexAllPvz } from "./ChartApexAllPvz.jsx";
 
 export let fromatNumber = (number) => {
   let newNumber = new Intl.NumberFormat("uz-UZ", {

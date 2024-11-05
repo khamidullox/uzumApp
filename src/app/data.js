@@ -247,7 +247,7 @@ let data = {
       uid: "ТЛК-1",
       plan: {
         limit: 169,
-        smena: 17489981,
+        smena: 20201000,
         ucell: 20,
       },
       user: {
@@ -271,7 +271,7 @@ let data = {
       uid: "ФЕР-13",
       plan: {
         limit: 164,
-        smena: 17489981,
+        smena: 19489981,
         ucell: 29,
       },
       user: {
@@ -307,7 +307,7 @@ let data = {
       uid: "ФЕР-4",
       plan: {
         limit: 179,
-        smena: 38442982,
+        smena: 39442982,
         ucell: 40,
       },
       user: {
@@ -320,7 +320,7 @@ let data = {
       uid: "ФЕР-5",
       plan: {
         limit: 252,
-        smena: 32765851,
+        smena: 34765851,
         ucell: 50,
       },
       user: {
@@ -332,7 +332,7 @@ let data = {
       uid: "ФЕР-6",
       plan: {
         limit: 121,
-        smena: 17489981,
+        smena: 19489981,
         ucell: 50,
       },
       user: {
@@ -344,7 +344,7 @@ let data = {
       uid: "ФЕР-7",
       plan: {
         limit: 118,
-        smena: 17489981,
+        smena: 19489981,
         ucell: 40,
       },
       user: {
@@ -356,7 +356,7 @@ let data = {
       uid: "ФЕР-8",
       plan: {
         limit: 161,
-        smena: 17489981,
+        smena: 19489981,
         ucell: 50,
       },
       user: {
@@ -369,7 +369,7 @@ let data = {
       uid: "ЯМГ-1",
       plan: {
         limit: 169,
-        smena: 17489981,
+        smena: 22489981,
         ucell: 20,
       },
       user: {

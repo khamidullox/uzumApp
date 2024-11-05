@@ -2,20 +2,21 @@ import React from "react";
 import {
   ChartPlanNumber,
   ChartApex,
-  Loading,
   SkletionLoading,
   SelectChekDate,
+  ListPlanSrez,
 } from "../components";
 import useUidBase from "../hooks/useUidBase";
 import { useSelector } from "react-redux";
 
 function ChartPlan() {
   let { user } = useSelector((store) => store.user);
-  const { summPlanPercent } = user.email.slice(-2) == "tu" ? {} : useUidBase();
+  const { summPlanPercent, grorpByPvz } =
+    user.email.slice(-2) == "tu" ? useUidBase() : useUidBase();
 
   return (
-    <div className="my-24 flex flex-col justify-center items-center">
-      <div className=" w-full items-center flex  justify-between px-16">
+    <div className="mb-10 mt-5 flex flex-col justify-between items-center">
+      <div className=" w-full my-5 items-center flex  justify-between px-16">
         <h2 className="text-2xl font-bold tracking-widest">Срез</h2>
         <SelectChekDate />
       </div>
@@ -26,10 +27,16 @@ function ChartPlan() {
             {<ChartPlanNumber srez={summPlanPercent().counterAll} />}
           </div>
         ) : (
-          <SkletionLoading />
+          <>
+            <SkletionLoading />
+          </>
         )
+      ) : grorpByPvz() ? (
+        <>
+          <ListPlanSrez grorpByPvz={grorpByPvz} />
+        </>
       ) : (
-        <></>
+        <SkletionLoading />
       )}
     </div>
   );

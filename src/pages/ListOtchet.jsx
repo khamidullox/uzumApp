@@ -27,9 +27,7 @@ const groupByDate = (base) => {
 function ListOtchet() {
   let { base, deletBase, topChoose } = useBase();
   let { user } = useSelector((state) => state.user);
-
   const groupedBase = base ? groupByDate(base) : {};
-
   return (
     <div className=" mt-5 flex flex-col items-center justify-center gap-5 active:">
       <div>
