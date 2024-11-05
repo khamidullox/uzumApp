@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 const ChartApex = ({ srez }) => {
   let { user } = useSelector((state) => state.user);
+  
 
   let { limit, smena, ucell } = srez;
   const chart = {

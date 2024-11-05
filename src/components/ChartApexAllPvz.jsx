@@ -1,22 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactApexChart from "react-apexcharts";
+import data from "../app/data";
+import { useSelector } from "react-redux";
+import { ChangeDefault } from "../app/TopIocnChose";
 
-function ChartApxAllPvz({ pvzList }) {
-  let [coulm, setCoulm] = useState({
+function ChartApxAllPvz({ pvzList, plannSrez, plan }) {
+  let { simle } = useSelector((state) => state.top);
+  let dataALlPvz = data["otabek"]
+    .map((item, id) => ({
+      name: item.uid,
+      percent: Math.ceil((plannSrez[id] / item.plan[plan]) * 100),
+    }))
+    .sort((a, b) => {
+      switch (simle) {
+        case "hight":
+          return b.percent - a.percent;
+        case "dawn":
+          return a.percent - b.percent;
+        case "default":
+          return;
+      }
+    });
+
+  let coulm = {
     series: [
       {
-        name: "Inflation",
-        data: [2.3, 3.1, 4.0, 10.1, 40, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+        name: "Percentage",
+        data: dataALlPvz.map((item) => item.percent), // Данные процентов
       },
     ],
     options: {
       chart: {
-        height: 350,
+        height: 550,
         type: "bar",
       },
       plotOptions: {
         bar: {
-          borderRadius: 8,
+          borderRadius: 0,
           dataLabels: {
             position: "top",
           },
@@ -25,19 +45,16 @@ function ChartApxAllPvz({ pvzList }) {
       dataLabels: {
         enabled: true,
         formatter: function (val) {
-          return val.toFixed(0) + "%";
+          return val.toFixed(0) + "%"; // Форматирование процентов
         },
         offsetY: -20,
         style: {
-          fontSize: "16px",
-          colors: ["#304758"],
-          // fontweight: "bold",
-          // padding: "16px",
+          fontSize: "14px",
+          colors: ["#3047fd"],
         },
       },
-
       xaxis: {
-        categories: pvzList,
+        categories: dataALlPvz.map((item) => item.name), // Имена категорий (uid)
         position: "top",
         axisBorder: {
           show: false,
@@ -60,6 +77,11 @@ function ChartApxAllPvz({ pvzList }) {
         tooltip: {
           enabled: true,
         },
+        labels: {
+          style: {
+            fontWeight: "600",
+          },
+        },
       },
       yaxis: {
         axisBorder: {
@@ -77,25 +99,28 @@ function ChartApxAllPvz({ pvzList }) {
         max: 100,
       },
       title: {
-        text: "Monthly Inflation in Argentina, 2002",
+        text: `Плны ${ChangeDefault(plan).name.slice(4, 15)}`,
         floating: true,
         offsetY: 330,
         align: "center",
         style: {
           color: "#444",
+          fontSize: "14px",
+          position: "absolute",
         },
       },
     },
-  });
+  };
+
   return (
-    <div>
-      <div id="chart">
+    <div className="">
+      <div className=" " id="chart">
         <ReactApexChart
           options={coulm.options}
           series={coulm.series}
           type="bar"
           height={350}
-          width={1000}
+          width={900}
         />
       </div>
       <div id="html-dist"></div>

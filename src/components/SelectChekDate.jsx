@@ -3,9 +3,7 @@ import { useDispatch } from "react-redux";
 import { planMonth } from "../slices/topSlice";
 
 function SelectChekDate() {
-  // let { month } = useSelector((state) => state.top);
   let dispatch = useDispatch();
-
   return (
     <select
       onChange={(v) => dispatch(planMonth(v.target.value))}

@@ -63,7 +63,7 @@ let useBase = (plan) => {
       return deleteDoc(doc(db, colection, otchet.id));
     }
 
-    toast.error("Вы можете удалать тлолько свой отчет", {
+    toast.error("Вы можете удалять только свой отчет ", {
       iconTheme: {
         // primary: "#713200",
         // secondary: "red",
