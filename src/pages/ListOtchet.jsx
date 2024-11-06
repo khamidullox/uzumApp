@@ -102,12 +102,6 @@ function ListOtchet() {
                                           0,
                                           item.sim,
                                           formatPlanDay(item).dayUcell
-                                        ) !== NaN
-                                      ? "0"
-                                      : formatDayLimit(
-                                          0,
-                                          item.sim,
-                                          formatPlanDay(item).dayUcell
                                         )}
                                     %
                                   </p>

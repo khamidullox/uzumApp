@@ -22,9 +22,13 @@ export let formatPlanDay = (pvzs, pl) => {
   return { daySmena, dayLimit, dayUcell, uid };
 };
 export let formatDayLimit = (max, start, dayLimit) => {
-  let day = (max * 2 + start) / dayLimit;
-  let dayPlan = Math.trunc(day * 100);
-  return dayPlan;
+  if (dayLimit == 0) {
+    return 0;
+  } else {
+    let day = (max * 2 + start) / dayLimit;
+    let dayPlan = Math.trunc(day * 100);
+    return dayPlan;
+  }
 };
 
 export let summPlanDay = () => {
