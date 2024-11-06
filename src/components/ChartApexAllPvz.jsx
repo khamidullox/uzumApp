@@ -21,6 +21,7 @@ function ChartApxAllPvz({ pvzList, plannSrez, plan }) {
           return;
       }
     });
+  console.log(dataALlPvz);
 
   let coulm = {
     series: [

@@ -17,7 +17,7 @@ export let formatPlanDay = (pvzs, pl) => {
   let { smena, limit, ucell } = plan;
   let daySmena = Math.round(smena / day);
   let dayLimit = Math.round(limit / day);
-  let dayUcell = Math.round(ucell / day);
+  let dayUcell = Math.round(ucell / day) == 0 ? 0 : Math.round(ucell / day);
 
   return { daySmena, dayLimit, dayUcell, uid };
 };
