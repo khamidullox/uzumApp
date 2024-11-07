@@ -28,7 +28,7 @@ let data = {
     {
       uid: "МРГ-1",
       plan: {
-        limit: 201,
+        limit: 400,
         smena: 91844853,
         ucell: 0.1,
       },
@@ -43,7 +43,7 @@ let data = {
     {
       uid: "МРГ-2",
       plan: {
-        limit: 400,
+        limit: 201,
         smena: 44277903,
         ucell: 40,
       },
