@@ -49,7 +49,7 @@ let data = {
       },
 
       user: {
-        adm1: " ",
+        adm1: "XALIMJONOV HAYOTTULLO XADIYATULLO O'G'LI ",
         adm2: "EGAMBERDIYEV ELYORBEK ERKINJON O'G'LI ",
         adm3: "KAMOLOV ABBOSXON AZIMJON O'G'LI ",
       },
@@ -67,7 +67,6 @@ let data = {
         adm2: "НОВЫЙ СОТРУДНИК ",
       },
     },
-
     {
       uid: "ТЛК-1",
       plan: {
