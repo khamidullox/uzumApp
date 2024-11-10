@@ -113,13 +113,17 @@ function Home() {
           </div>
         </div>
         <div className=" w-full mt-5 text-right mb-5 ">
-          <button
-            onClick={() => {}}
-            className="btn btn-info px-10 md:w-52 w-full border-indigo-500 border-2 "
-          >
-            Отправить
-            <BsFillSendArrowUpFill />
-          </button>
+          {user.email.slice(-2) !== "tu" ? (
+            <button
+              onClick={() => {}}
+              className="btn btn-info px-10 md:w-52 w-full border-indigo-500 border-2 "
+            >
+              Отправить
+              <BsFillSendArrowUpFill />
+            </button>
+          ) : (
+            ""
+          )}
         </div>
         <GlobalLoading />
       </div>

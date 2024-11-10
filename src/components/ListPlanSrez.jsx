@@ -7,6 +7,7 @@ function ListPlanSrez({ grorpByPvz }) {
   const groupPvz = grorpByPvz();
   const { calculateTotal } = useUidBase();
   const { groupAllSrez } = useChart(groupPvz, calculateTotal);
+  console.log(groupAllSrez());
   return (
     <>
       <ChartApexAllPvz

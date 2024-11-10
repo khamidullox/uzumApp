@@ -47,12 +47,27 @@ let data = {
         smena: 44277903,
         ucell: 40,
       },
+
       user: {
-        adm1: "XALIMJONOV HAYOTTULLO XADIYATULLO O'G'LI ",
+        adm1: " ",
         adm2: "EGAMBERDIYEV ELYORBEK ERKINJON O'G'LI ",
         adm3: "KAMOLOV ABBOSXON AZIMJON O'G'LI ",
       },
     },
+    {
+      uid: "МРГ-3",
+      plan: {
+        limit: 120,
+        smena: 16123522,
+        ucell: 20,
+      },
+
+      user: {
+        adm1: "НОВЫЙ СОТРУДНИК",
+        adm2: "НОВЫЙ СОТРУДНИК ",
+      },
+    },
+
     {
       uid: "ТЛК-1",
       plan: {

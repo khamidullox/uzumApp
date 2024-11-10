@@ -88,15 +88,17 @@ let useUidBase = (plan) => {
         limit: 0,
         ucell: 0,
       };
-      newObj[newObjKeys].map((item) => {
-        summPercent = {
-          max: (counterA += item.max),
-          start: (counterB += item.start),
-          smena: (counterC += item.sum),
-          ucell: (counterD += item.sim),
-          limit: counterA + counterB * 2,
-        };
-      });
+
+      newObj[newObjKeys] &&
+        newObj[newObjKeys].map((item) => {
+          summPercent = {
+            max: (counterA += item.max),
+            start: (counterB += item.start),
+            smena: (counterC += item.sum),
+            ucell: (counterD += item.sim),
+            limit: counterA + counterB * 2,
+          };
+        });
 
       counterAll = {
         maxCount: counterA,

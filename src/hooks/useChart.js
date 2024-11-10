@@ -15,6 +15,7 @@ const useChart = (groupPvz, calculateTotal) => {
         dataAllPvzPlan.smenaAll.push(calculateTotal(groupPvz[pvz], "sum"));
         dataAllPvzPlan.ucellAll.push(calculateTotal(groupPvz[pvz], "sim"));
       });
+    // console.log(Object.keys(groupPvz).sort());
     return dataAllPvzPlan;
   };
   return { groupAllSrez };
