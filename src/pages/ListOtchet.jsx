@@ -56,7 +56,7 @@ function ListOtchet() {
                         return (
                           <Fragment key={item.id}>
                             <div
-                              className={` border shadow-lg  p-2 hover:shadow-xl rounded-xl border-indigo-600 font-bold relative px-2 md:w-40 w-52 ${
+                              className={` border shadow-lg  p-2 hover:shadow-xl rounded-xl border-indigo-600 font-bold relative px-2 md:w-44 w-52 ${
                                 user.displayName == item.user
                                   ? "  border-b-indigo-700 bg-blue-50"
                                   : ""
@@ -67,17 +67,23 @@ function ListOtchet() {
                                 <span className=" font-bold">{item.user}</span>
                               </h3>
                               <ul className=" font-mono flex flex-col">
-                                <li className="">
+                                <li className=" flex gap-4">
                                   <p>
                                     Start:{" "}
                                     <span className="">{item.start}</span>
                                   </p>
-                                </li>
-                                <li className=" flex justify-between relative border-b-2 ">
                                   <p>
                                     Max: <span>{item.max}</span>
                                   </p>
-                                  <p className=" absolute right-2 bottom-3 rounded-xl border-green-600 border px-0.5 text-green-500 ">
+                                </li>
+                                <li className=" flex justify-between relative border-b-2 ">
+                                  <p>
+                                    <p className="text-cyan-700 rounded-xl py border-green-600 border px-2 my-2 ">
+                                      Итог:{" "}
+                                      <span>{item.max * 2 + item.start}</span>
+                                    </p>
+                                  </p>
+                                  <p className=" absolute right-2 bottom-2 rounded-xl border-green-600 border px-0.5 text-green-500 ">
                                     {formatDayLimit(
                                       item.max,
                                       item.start,
