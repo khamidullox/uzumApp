@@ -13,7 +13,6 @@ import { useSelector } from "react-redux";
 function ChartPlan() {
   let { user } = useSelector((store) => store.user);
   const { summPlanPercent, grorpByPvz } = useUidBase();
-
   return (
     <div className="mb-10 mt-5 flex flex-col justify-between items-center">
       <div className=" w-full my-5 items-center flex  justify-between px-16">

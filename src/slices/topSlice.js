@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
   change: null,
-  month: 1,
+  month: 0,
   simle: null,
 };
 
