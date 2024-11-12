@@ -67,7 +67,7 @@ function ListOtchet() {
                                 <span className=" font-bold">{item.user}</span>
                               </h3>
                               <ul className=" font-mono flex flex-col">
-                                <li className=" flex gap-4">
+                                <li className=" flex gap-4  ">
                                   <p>
                                     Start:{" "}
                                     <span className="">{item.start}</span>

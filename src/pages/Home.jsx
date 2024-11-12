@@ -40,6 +40,7 @@ function Home() {
       cleaInput(refStart, refMax, refSmena, refSim);
     }
   }, [plan]);
+
   return (
     <Form
       method="post"

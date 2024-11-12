@@ -15,10 +15,12 @@ let useDate = (user) => {
       const day = String(today.getDate()).padStart(2, "0");
       return `${year}-${month}-${day}`;
     };
-
-    // Устанавливаем значение сегодняшней даты
     setDate(getTodayDate());
+    setInterval(() => {
+      setDate(getTodayDate());
+    }, 10000);
   }, []);
+
   if (user) {
     filterData = data.otabek.filter((pvz) => pvz.uid == user.displayName);
     filterData.map((pvz) => {
