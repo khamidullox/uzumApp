@@ -11,7 +11,7 @@ function NameAdm({ user }) {
       <h3 className=" text-center w-full font-bold text-xl">
         <span className=" font-mono">Сотрудники</span>: {user.displayName}
       </h3>
-      <div className="flex flex-col md:flex-row justify-between w-full gap-6 p-5 bg-gray-50 rounded-lg shadow-md">
+      <div className="flex flex-col md:flex-row justify-between w-full gap-6 p-5 bg-base-100-50 rounded-lg shadow-md">
         <ul className="leading-8 space-y-3">
           {adm1 && (
             <li className="flex items-center gap-3">
