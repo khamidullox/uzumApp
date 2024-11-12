@@ -54,7 +54,7 @@ function Home() {
           </h3>
         </div>
         <input
-          className="bg-gray-50 text-base border-2 bg-none border-indigo-200  md:tracking-widest  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  ps-10 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className=" text-base border-2 bg-none border-indigo-200  md:tracking-widest  rounded-lg focus:ring-blue-500 focus:border-blue-500 block  ps-10 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
           type="date"
           name="date"
           defaultValue={date}
