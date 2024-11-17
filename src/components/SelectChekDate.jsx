@@ -11,8 +11,8 @@ function SelectChekDate() {
       }}
       className="select select-info w-28 max-w-xs"
     >
-      <option value={0}>Август</option>
       <option value={1}>Октябрь</option>
+      <option value={0}> Август</option>
     </select>
   );
 }
